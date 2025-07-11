@@ -1,2 +1,2 @@
 # 2dice-html
-Promotion and intro page to BibleDice.fun
+Dice roll tool for studying scripture. Main site is bibledice.fun
