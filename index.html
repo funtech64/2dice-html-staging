@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2Dice Fun 🎲</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Roll the Dice!</h1>
+    <p>D6: <span id="d6">-</span></p>
+    <p>D10: <span id="d10">-</span></p>
+    <button onclick="rollDice()">Roll</button>
+  </div>
+
+  <script>
+    function rollDice() {
+      document.getElementById('d6').textContent = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('d10').textContent = Math.floor(Math.random() * 10) + 1;
+    }
+  </script>
+</body>
+</html>
