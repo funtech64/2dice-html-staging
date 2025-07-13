@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>2dice.fun</title>
+  <title>🎲 2Dice Fun</title>
   <style>
     body {
       font-family: sans-serif;
@@ -68,11 +68,11 @@
 
   <div class="dice-container">
     <div>
-      <div id="d6-img" class="dice-img" style="background-color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: bold;">🎲</div>
-      <div class="value" id="d6-val">1</div>
+      <img id="d6-img" class="dice-img" src="assets/dice/d6-4.png" alt="D6 showing 4">
+      <div class="value" id="d6-val">4</div>
     </div>
     <div>
-      <div id="d10-img" class="dice-img" style="background-color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: bold;">🎲</div>
+      <img id="d10-img" class="dice-img" src="assets/dice/d10-0.png" alt="D10 showing 0">
       <div class="value" id="d10-val">0</div>
     </div>
   </div>
@@ -407,9 +407,9 @@
       document.getElementById('d6-val').innerText = d6;
       document.getElementById('d10-val').innerText = d10;
       
-      // Update the dice display (since we don't have images, just show the dice emoji)
-      document.getElementById('d6-img').innerHTML = '🎲';
-      document.getElementById('d10-img').innerHTML = '🎲';
+      // Update dice images (you'll need to have images for each face)
+      document.getElementById('d6-img').src = `assets/dice/d6-${d6}.png`;
+      document.getElementById('d10-img').src = `assets/dice/d10-${d10}.png`;
     }
   </script>
 
