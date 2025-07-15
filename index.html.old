@@ -388,10 +388,15 @@
     <p style="text-align: center; margin-top: 0.5rem; color: #666; font-size: 0.95em;">Use a D6 (for the ones place) and a D10 (for the tens place) to generate a number between 10 and 66 like the online tool above.<br>
     <small>For more advanced gaming, see: <a href="https://bibledice.fun" style="color: #0066cc;">bibledice.fun</a></small></p>
     
-<div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; align-items: center;"> 
-<div style="text-align: center;"> 
-border-radius: 8px; margin: 0 auto;">0</div> 
-<div style="font-size: 18px; margin-top: 0.5rem; font-weight: bold;">0</div> 
+<div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; align-items: center;">
+  <div style="text-align: center;">
+    <img src="2dice-D6-4.jpg" style="width: 80px; height: 80px; border-radius: 8px;" alt="Physical D6 showing 4">
+    <div style="font-size: 18px; margin-top: 0.5rem; font-weight: bold;">4</div>
+  </div>
+  <div style="text-align: center;">
+    <img src="2dice-D10-0.jpg" style="width: 80px; height: 80px; border-radius: 8px;" alt="Physical D10 showing 0">
+    <div style="font-size: 18px; margin-top: 0.5rem; font-weight: bold;">0</div>
+  </div>
 </div>
 
   <script>
