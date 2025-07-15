@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<tr>
+          <td>11</td>
+          <td>1 Kings</td>
+          <td></td>
+          <td>41</td>
+          <td>Mark</td>
+          <td></td>
+          <td class="chapter-help"><a href="tables/pauline-epistles.html">Pauline Epistles</a></td>
+        </tr>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -25,6 +33,21 @@
       font-size: 18px;
       margin-top: 20px;
       cursor: pointer;
+      background-color: #28a745;
+      color: white;
+      border: 2px solid #1e7e34;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    button:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .value {
       font-size: 20px;
@@ -64,25 +87,24 @@
 </head>
 <body>
 
-  <h1>2dice.fun</h1>
+  <h1 style="font-size: 2.4em;">2dice.fun</h1>
 
   <div class="dice-container">
     <div>
-      <img id="d6-img" class="dice-img" src="assets/dice/d6-4.png" alt="D6 showing 4">
+      <div id="d6-img" class="dice-img" style="background-color: #4472C4; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; border-radius: 8px;">●●<br>●●</div>
       <div class="value" id="d6-val">4</div>
     </div>
     <div>
-      <img id="d10-img" class="dice-img" src="assets/dice/d10-0.png" alt="D10 showing 0">
+      <div id="d10-img" class="dice-img" style="background-color: #C5504B; color: gold; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: bold; border-radius: 8px;">0</div>
       <div class="value" id="d10-val">0</div>
     </div>
   </div>
 
-  <button onclick="rollDice()">🎲 Roll the Dice!</button>
+  <button onclick="rollDice()" style="font-weight: bold; font-size: 1.2em;">Let's Roll!</button>
 
   <div class="bible-chart">
     <h2>🎲 Bible Book Number Chart</h2>
-    <p>Use a D6 (for the ones place) and a D10 (for the tens place) to generate a number between 10 and 66.<br>
-    <small>For more advanced gaming, see: <a href="https://bibledice.fun" style="color: #0066cc;">bibledice.fun</a></small></p>
+    <p style="font-style: italic; color: #666; margin-top: 1rem;">Never be discouraged reading 66 books and 1,189 chapters of the Bible!</p>
     
     <table>
       <thead>
@@ -369,6 +391,21 @@
         </tr>
       </tbody>
     </table>
+    
+    <p style="text-align: center; margin-top: 2rem; color: #333; font-size: 1.1em; font-weight: bold;">Taking it offline?</p>
+    <p style="text-align: center; margin-top: 0.5rem; color: #666; font-size: 0.95em;">Use a D6 (for the ones place) and a D10 (for the tens place) to generate a number between 10 and 66 like the online tool above.<br>
+    <small>For more advanced gaming, see: <a href="https://bibledice.fun" style="color: #0066cc;">bibledice.fun</a></small></p>
+    
+    <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; align-items: center;">
+      <div style="text-align: center;">
+        <img src="d6-4.png" style="width: 80px; height: 80px; border-radius: 8px;" alt="Physical D6 showing 4">
+        <div style="font-size: 18px; margin-top: 0.5rem; font-weight: bold;">4</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="d10-0.png" style="width: 80px; height: 80px; border-radius: 8px;" alt="Physical D10 showing 0">
+        <div style="font-size: 18px; margin-top: 0.5rem; font-weight: bold;">0</div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -407,9 +444,18 @@
       document.getElementById('d6-val').innerText = d6;
       document.getElementById('d10-val').innerText = d10;
       
-      // Update dice images (you'll need to have images for each face)
-      document.getElementById('d6-img').src = `assets/dice/d6-${d6}.png`;
-      document.getElementById('d10-img').src = `assets/dice/d10-${d10}.png`;
+      // Update dice display with proper American dice patterns
+      const d6Dots = [
+        '', 
+        '<br>&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;<br><br>', // 1: center dot
+        '●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●', // 2: diagonal top-left to bottom-right
+        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;<br>●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', // 3: bottom-left, center, top-right
+        '●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br><br>●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●', // 4: four corners
+        '●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;<br>●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●', // 5: four corners + center
+        '●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>●&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●'  // 6: two columns
+      ];
+      document.getElementById('d6-img').innerHTML = d6Dots[d6];
+      document.getElementById('d10-img').innerHTML = d10;
     }
   </script>
 
