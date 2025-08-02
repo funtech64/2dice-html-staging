@@ -41,12 +41,17 @@
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
+            text-align: left;
         }
-        
+
         .description h2 {
             color: #667eea;
             margin-top: 0;
+            text-align: center;
+        }
+
+        .description p {
+            margin-bottom: 0;
         }
         
         .main-table {
@@ -92,6 +97,10 @@
             background: linear-gradient(90deg, transparent, #667eea, transparent);
             width: 3px;
             padding: 0;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
         }
         
         .dice-simulator {
@@ -188,20 +197,46 @@
             color: #856404;
             margin-top: 0;
         }
-        
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
             }
-            
+
             .dice-container {
                 gap: 10px;
             }
-            
+
             .die {
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
+            }
+
+            .main-table thead {
+                display: none;
+            }
+
+            .main-table table,
+            .main-table tbody,
+            .main-table tr,
+            .main-table td {
+                display: block;
+            }
+
+            .main-table tr {
+                display: grid;
+                grid-template-columns: 60px 1fr;
+                margin-bottom: 10px;
+            }
+
+            .main-table .separator {
+                display: none;
+            }
+
+            .main-table td {
+                text-align: left;
+                border-bottom: none;
             }
         }
     </style>
@@ -224,6 +259,10 @@
             <div class="die d10" id="die2" onclick="rollDice()">0</div>
         </div>
         <button onclick="rollDice()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 16px; cursor: pointer; margin-top: 10px;">Roll Dice!</button>
+        <div style="margin-top:10px;">
+            <label><input type="checkbox" id="coin-option"> Include Coin Flip ±10</label>
+        </div>
+        <div id="roll-result" style="margin-top:15px;"></div>
     </div>
     
     <div class="main-table">
@@ -239,211 +278,274 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>10</td>
-                    <td>2 Samuel</td>
+                    <td>1</td>
+                    <td><a href="1-genesis.html">Genesis</a></td>
                     <td class="separator"></td>
                     <td>40</td>
-                    <td>Matthew</td>
+                    <td><a href="40-matthew.html">Matthew</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="2-exodus.html">Exodus</a></td>
+                    <td class="separator"></td>
+                    <td>41</td>
+                    <td><a href="41-mark.html">Mark</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="3-leviticus.html">Leviticus</a></td>
+                    <td class="separator"></td>
+                    <td>42</td>
+                    <td><a href="42-luke.html">Luke</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="4-numbers.html">Numbers</a></td>
+                    <td class="separator"></td>
+                    <td>43</td>
+                    <td><a href="43-john.html">John</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="5-deuteronomy.html">Deuteronomy</a></td>
+                    <td class="separator"></td>
+                    <td>44</td>
+                    <td><a href="44-acts.html">Acts</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="6-joshua.html">Joshua</a></td>
+                    <td class="separator"></td>
+                    <td>45</td>
+                    <td><a href="45-romans.html">Romans</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="7-judges.html">Judges</a></td>
+                    <td class="separator"></td>
+                    <td>46</td>
+                    <td><a href="46-1-corinthians.html">1 Corinthians</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="8-ruth.html">Ruth</a></td>
+                    <td class="separator"></td>
+                    <td>47</td>
+                    <td><a href="47-2-corinthians.html">2 Corinthians</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="9-1-samuel.html">1 Samuel</a></td>
+                    <td class="separator"></td>
+                    <td>48</td>
+                    <td><a href="48-galatians.html">Galatians</a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="10-2-samuel.html">2 Samuel</a></td>
+                    <td class="separator"></td>
+                    <td>49</td>
+                    <td><a href="49-ephesians.html">Ephesians</a></td>
                 </tr>
                 <tr>
                     <td>11</td>
-                    <td>1 Kings</td>
+                    <td><a href="11-1-kings.html">1 Kings</a></td>
                     <td class="separator"></td>
-                    <td>42</td>
-                    <td>Luke</td>
+                    <td>50</td>
+                    <td><a href="50-philippians.html">Philippians</a></td>
                 </tr>
                 <tr>
                     <td>12</td>
-                    <td>2 Kings</td>
+                    <td><a href="12-2-kings.html">2 Kings</a></td>
                     <td class="separator"></td>
-                    <td>43</td>
-                    <td>John</td>
+                    <td>51</td>
+                    <td><a href="51-colossians.html">Colossians</a></td>
                 </tr>
                 <tr>
                     <td>13</td>
-                    <td>1 Chronicles</td>
+                    <td><a href="13-1-chronicles.html">1 Chronicles</a></td>
                     <td class="separator"></td>
-                    <td>44</td>
-                    <td>Acts</td>
+                    <td>52</td>
+                    <td><a href="52-1-thessalonians.html">1 Thessalonians</a></td>
                 </tr>
                 <tr>
                     <td>14</td>
-                    <td>2 Chronicles</td>
+                    <td><a href="14-2-chronicles.html">2 Chronicles</a></td>
                     <td class="separator"></td>
-                    <td>45</td>
-                    <td>Romans</td>
+                    <td>53</td>
+                    <td><a href="53-2-thessalonians.html">2 Thessalonians</a></td>
                 </tr>
                 <tr>
                     <td>15</td>
-                    <td>Ezra</td>
+                    <td><a href="15-ezra.html">Ezra</a></td>
                     <td class="separator"></td>
-                    <td>46</td>
-                    <td>1 Corinthians</td>
+                    <td>54</td>
+                    <td><a href="54-1-timothy.html">1 Timothy</a></td>
                 </tr>
                 <tr>
                     <td>16</td>
-                    <td>Nehemiah</td>
+                    <td><a href="16-nehemiah.html">Nehemiah</a></td>
                     <td class="separator"></td>
-                    <td>47</td>
-                    <td>2 Corinthians</td>
+                    <td>55</td>
+                    <td><a href="55-2-timothy.html">2 Timothy</a></td>
                 </tr>
                 <tr>
                     <td>17</td>
-                    <td>Esther</td>
+                    <td><a href="17-esther.html">Esther</a></td>
                     <td class="separator"></td>
-                    <td>48</td>
-                    <td>Galatians</td>
+                    <td>56</td>
+                    <td><a href="56-titus.html">Titus</a></td>
                 </tr>
                 <tr>
                     <td>18</td>
-                    <td>Job</td>
+                    <td><a href="18-job.html">Job</a></td>
                     <td class="separator"></td>
-                    <td>49</td>
-                    <td>Ephesians</td>
+                    <td>57</td>
+                    <td><a href="57-philemon.html">Philemon</a></td>
                 </tr>
                 <tr>
                     <td>19</td>
-                    <td>Psalms</td>
+                    <td><a href="19-psalms.html">Psalms</a></td>
                     <td class="separator"></td>
-                    <td>50</td>
-                    <td>Philippians</td>
+                    <td>58</td>
+                    <td><a href="58-hebrews.html">Hebrews</a></td>
                 </tr>
                 <tr>
                     <td>20</td>
-                    <td>Proverbs</td>
+                    <td><a href="20-proverbs.html">Proverbs</a></td>
                     <td class="separator"></td>
-                    <td>51</td>
-                    <td>Colossians</td>
+                    <td>59</td>
+                    <td><a href="59-james.html">James</a></td>
                 </tr>
                 <tr>
                     <td>21</td>
-                    <td>Ecclesiastes</td>
+                    <td><a href="21-ecclesiastes.html">Ecclesiastes</a></td>
                     <td class="separator"></td>
-                    <td>52</td>
-                    <td>1 Thessalonians</td>
+                    <td>60</td>
+                    <td><a href="60-1-peter.html">1 Peter</a></td>
                 </tr>
                 <tr>
                     <td>22</td>
-                    <td>Song of Solomon</td>
+                    <td><a href="22-song-of-solomon.html">Song of Solomon</a></td>
                     <td class="separator"></td>
-                    <td>53</td>
-                    <td>2 Thessalonians</td>
+                    <td>61</td>
+                    <td><a href="61-2-peter.html">2 Peter</a></td>
                 </tr>
                 <tr>
                     <td>23</td>
-                    <td>Isaiah</td>
+                    <td><a href="23-isaiah.html">Isaiah</a></td>
                     <td class="separator"></td>
-                    <td>54</td>
-                    <td>1 Timothy</td>
+                    <td>62</td>
+                    <td><a href="62-1-john.html">1 John</a></td>
                 </tr>
                 <tr>
                     <td>24</td>
-                    <td>Jeremiah</td>
+                    <td><a href="24-jeremiah.html">Jeremiah</a></td>
                     <td class="separator"></td>
-                    <td>55</td>
-                    <td>2 Timothy</td>
+                    <td>63</td>
+                    <td><a href="63-2-john.html">2 John</a></td>
                 </tr>
                 <tr>
                     <td>25</td>
-                    <td>Lamentations</td>
+                    <td><a href="25-lamentations.html">Lamentations</a></td>
                     <td class="separator"></td>
-                    <td>56</td>
-                    <td>Titus</td>
+                    <td>64</td>
+                    <td><a href="64-3-john.html">3 John</a></td>
                 </tr>
                 <tr>
                     <td>26</td>
-                    <td>Ezekiel</td>
+                    <td><a href="26-ezekiel.html">Ezekiel</a></td>
                     <td class="separator"></td>
-                    <td>57</td>
-                    <td>Philemon</td>
+                    <td>65</td>
+                    <td><a href="65-jude.html">Jude</a></td>
                 </tr>
                 <tr>
                     <td>27</td>
-                    <td>Daniel</td>
+                    <td><a href="27-daniel.html">Daniel</a></td>
                     <td class="separator"></td>
-                    <td>58</td>
-                    <td>Hebrews</td>
+                    <td>66</td>
+                    <td><a href="66-revelation.html">Revelation</a></td>
                 </tr>
                 <tr>
                     <td>28</td>
-                    <td>Hosea</td>
+                    <td><a href="28-hosea.html">Hosea</a></td>
                     <td class="separator"></td>
-                    <td>59</td>
-                    <td>James</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>29</td>
-                    <td>Joel</td>
+                    <td><a href="29-joel.html">Joel</a></td>
                     <td class="separator"></td>
-                    <td>60</td>
-                    <td>1 Peter</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>30</td>
-                    <td>Amos</td>
+                    <td><a href="30-amos.html">Amos</a></td>
                     <td class="separator"></td>
-                    <td>61</td>
-                    <td>2 Peter</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>31</td>
-                    <td>Obadiah</td>
+                    <td><a href="31-obadiah.html">Obadiah</a></td>
                     <td class="separator"></td>
-                    <td>62</td>
-                    <td>1 John</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>32</td>
-                    <td>Jonah</td>
+                    <td><a href="32-jonah.html">Jonah</a></td>
                     <td class="separator"></td>
-                    <td>63</td>
-                    <td>2 John</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>33</td>
-                    <td>Micah</td>
+                    <td><a href="33-micah.html">Micah</a></td>
                     <td class="separator"></td>
-                    <td>64</td>
-                    <td>3 John</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>34</td>
-                    <td>Nahum</td>
+                    <td><a href="34-nahum.html">Nahum</a></td>
                     <td class="separator"></td>
-                    <td>65</td>
-                    <td>Jude</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>35</td>
-                    <td>Habakkuk</td>
+                    <td><a href="35-habakkuk.html">Habakkuk</a></td>
                     <td class="separator"></td>
-                    <td>66</td>
-                    <td>Revelation</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>36</td>
-                    <td>Zephaniah</td>
+                    <td><a href="36-zephaniah.html">Zephaniah</a></td>
                     <td class="separator"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>37</td>
-                    <td>Haggai</td>
+                    <td><a href="37-haggai.html">Haggai</a></td>
                     <td class="separator"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>38</td>
-                    <td>Zechariah</td>
+                    <td><a href="38-zechariah.html">Zechariah</a></td>
                     <td class="separator"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>39</td>
-                    <td>Malachi</td>
+                    <td><a href="39-malachi.html">Malachi</a></td>
                     <td class="separator"></td>
                     <td></td>
                     <td></td>
@@ -457,16 +559,11 @@
         <div class="tables-grid">
             <a href="tables/gospels.html" class="table-link">Gospels</a>
             <a href="tables/wisdom-lit.html" class="table-link">Wisdom Literature</a>
-            <a href="tables/psalms.html" class="table-link">Psalms</a>
-            <a href="tables/psalm119.html" class="table-link">Psalm 119</a>
-            <a href="tables/pauline-epistles.html" class="table-link">Pauline Epistles</a>
             <a href="tables/pauline-epistles2.html" class="table-link">Pauline Epistles 2</a>
             <a href="tables/isaiah.html" class="table-link">Isaiah</a>
             <a href="tables/jeremiah.html" class="table-link">Jeremiah</a>
             <a href="tables/ezekiel.html" class="table-link">Ezekiel</a>
-            <a href="tables/daniel.html" class="table-link">Daniel</a>
             <a href="tables/minor-prophets.html" class="table-link">Minor Prophets</a>
-            <a href="tables/prophets.html" class="table-link">Prophets</a>
             <a href="tables/grief-lit.html" class="table-link">Grief Literature</a>
         </div>
     </div>
@@ -478,53 +575,75 @@
     </div>
     
     <script>
+        const books = {
+            1: 'Genesis', 2: 'Exodus', 3: 'Leviticus', 4: 'Numbers', 5: 'Deuteronomy', 6: 'Joshua', 7: 'Judges', 8: 'Ruth', 9: '1 Samuel', 10: '2 Samuel', 11: '1 Kings', 12: '2 Kings', 13: '1 Chronicles', 14: '2 Chronicles', 15: 'Ezra', 16: 'Nehemiah', 17: 'Esther', 18: 'Job', 19: 'Psalms', 20: 'Proverbs', 21: 'Ecclesiastes', 22: 'Song of Solomon', 23: 'Isaiah', 24: 'Jeremiah', 25: 'Lamentations', 26: 'Ezekiel', 27: 'Daniel', 28: 'Hosea', 29: 'Joel', 30: 'Amos', 31: 'Obadiah', 32: 'Jonah', 33: 'Micah', 34: 'Nahum', 35: 'Habakkuk', 36: 'Zephaniah', 37: 'Haggai', 38: 'Zechariah', 39: 'Malachi', 40: 'Matthew', 41: 'Mark', 42: 'Luke', 43: 'John', 44: 'Acts', 45: 'Romans', 46: '1 Corinthians', 47: '2 Corinthians', 48: 'Galatians', 49: 'Ephesians', 50: 'Philippians', 51: 'Colossians', 52: '1 Thessalonians', 53: '2 Thessalonians', 54: '1 Timothy', 55: '2 Timothy', 56: 'Titus', 57: 'Philemon', 58: 'Hebrews', 59: 'James', 60: '1 Peter', 61: '2 Peter', 62: '1 John', 63: '2 John', 64: '3 John', 65: 'Jude', 66: 'Revelation'
+        };
+
+        let lastHighlightedRow = null;
+
         function rollDice() {
             const die1 = document.getElementById('die1');
             const die2 = document.getElementById('die2');
-            
+            const coinOption = document.getElementById('coin-option');
+            const resultDiv = document.getElementById('roll-result');
+
             // Animation effect
             die1.style.transform = 'rotate(360deg)';
             die2.style.transform = 'rotate(-360deg)';
-            
+
             setTimeout(() => {
-                // Generate random numbers
-                const tens = Math.floor(Math.random() * 6) + 1; // 1-6 for tens place
-                const ones = Math.floor(Math.random() * 10); // 0-9 for ones place
-                
-                // Ensure we get a valid Bible book number (10-66)
+                const tens = Math.floor(Math.random() * 6) + 1;
+                const ones = Math.floor(Math.random() * 10);
+
                 let result = tens * 10 + ones;
                 if (result < 10) result += 10;
-                if (result > 66) result = result - 10;
-                
-                // Display the dice values
+                if (result > 66) result -= 10;
+
                 die1.textContent = Math.floor(result / 10);
                 die2.textContent = result % 10;
-                
-                // Reset animation
+
                 die1.style.transform = 'rotate(0deg)';
                 die2.style.transform = 'rotate(0deg)';
-                
-                // Highlight the corresponding row
-                highlightRow(result);
+
+                let final = result;
+                let message = '';
+                if (coinOption.checked) {
+                    const coin = Math.random() < 0.5 ? -10 : 10;
+                    final = Math.min(66, Math.max(10, result + coin));
+                    message = `Rolled ${result} (${coin > 0 ? '+10' : '-10'} from coin) = ${final} → Book: ${books[final]}`;
+                } else {
+                    message = `You rolled: ${books[final]} (Book #${final})`;
+                }
+
+                highlightRow(final);
+                resultDiv.innerHTML = message + ' <a href="#" id="jump-link">Jump to Table</a>';
+                const jump = document.getElementById('jump-link');
+                if (jump) {
+                    jump.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (lastHighlightedRow) {
+                            lastHighlightedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    });
+                }
             }, 500);
         }
-        
+
         function highlightRow(number) {
-            // Remove previous highlights
             const rows = document.querySelectorAll('tbody tr');
-            rows.forEach(row => row.style.backgroundColor = '');
-            
-            // Find and highlight the matching row
+            rows.forEach(row => row.classList.remove('highlight'));
+            lastHighlightedRow = null;
             const cells = document.querySelectorAll('tbody td');
             cells.forEach(cell => {
-                if (cell.textContent === number.toString()) {
-                    cell.parentElement.style.backgroundColor = '#ffeb3b';
-                    cell.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (cell.textContent.trim() === number.toString()) {
+                    lastHighlightedRow = cell.parentElement;
                 }
             });
+            if (lastHighlightedRow) {
+                lastHighlightedRow.classList.add('highlight');
+            }
         }
-        
-        // Initialize with random values
+
         rollDice();
     </script>
 </body>
