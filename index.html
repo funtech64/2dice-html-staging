@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,11 +121,6 @@
         .die:hover {
             transform: scale(1.1);
         }
-        .dice-image {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-        }
         .tables-section {
             background: white;
             padding: 25px;
@@ -173,6 +167,19 @@
             color: #856404;
             margin-top: 0;
         }
+        .offline-section p {
+            margin: 10px 0;
+        }
+        .offline-dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 10px 0;
+        }
+        .offline-dice {
+            width: 80px;
+            height: 80px;
+        }
         .highlight {
             background-color: #ffeb3b !important;
         }
@@ -181,7 +188,7 @@
             .dice-container { gap: 10px; }
             .die { width: 50px; height: 50px; font-size: 20px; }
             table { display: block; overflow-x: auto; }
-            .dice-image { width: 80px; height: 80px; }
+            .offline-dice { width: 60px; height: 60px; }
         }
         button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -237,10 +244,8 @@
     <div class="dice-simulator">
         <h3>🎲 Roll for Your Next Reading 🎲</h3>
         <div class="dice-container">
-            <img src="d6-blue.jpg" alt="Blue D6 showing 4 pips" class="dice-image">
-            <img src="d10-red.jpg" alt="Red D10 showing 0" class="dice-image">
-            <img src="d6-blue-alternate.jpg" alt="Alternate Blue D6 showing 4 pips" class="dice-image">
-            <img src="d10-red-alternate.jpg" alt="Alternate Red D10 showing 0" class="dice-image">
+            <div class="die d6" id="die1">6</div>
+            <div class="die d10" id="die2">0</div>
         </div>
         <button onclick="rollDice()">Roll Dice!</button>
         <label><input type="checkbox" id="coin-flip"> Include Coin Flip ±10</label>
@@ -559,6 +564,11 @@
     <div class="offline-section">
         <h3>📱 Taking it offline?</h3>
         <p>Use a D6 (for the ones place) and a D10 (for the tens place) to generate a number between 10 and 66 like the online tool above.</p>
+        <div class="offline-dice-container">
+            <img src="d6-blue.jpg" alt="Blue D6 showing 4 pips" class="offline-dice">
+            <span>spaces...</span>
+            <img src="d10-red.jpg" alt="Red D10 showing 0" class="offline-dice">
+        </div>
         <p>For more advanced gaming, see: <a href="https://bibledice.fun">bibledice.fun</a></p>
         <a href="bible-reading-chart.html" class="feature-button chart-button">📖 Bible Reading Chart</a>
         <a href="https://bibledice.fun" class="feature-button mobile-button" target="_blank">🎲 BibleDice.fun <span>Smaller, mobile friendly and fast guide</span></a>
@@ -624,4 +634,3 @@
     </script>
 </body>
 </html>
-```
