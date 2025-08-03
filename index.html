@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,6 +122,11 @@
         .die:hover {
             transform: scale(1.1);
         }
+        .dice-image {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
         .tables-section {
             background: white;
             padding: 25px;
@@ -175,6 +181,7 @@
             .dice-container { gap: 10px; }
             .die { width: 50px; height: 50px; font-size: 20px; }
             table { display: block; overflow-x: auto; }
+            .dice-image { width: 80px; height: 80px; }
         }
         button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -230,8 +237,10 @@
     <div class="dice-simulator">
         <h3>🎲 Roll for Your Next Reading 🎲</h3>
         <div class="dice-container">
-            <div class="die d6" id="die1">6</div>
-            <div class="die d10" id="die2">0</div>
+            <img src="d6-blue.jpg" alt="Blue D6 showing 4 pips" class="dice-image">
+            <img src="d10-red.jpg" alt="Red D10 showing 0" class="dice-image">
+            <img src="d6-blue-alternate.jpg" alt="Alternate Blue D6 showing 4 pips" class="dice-image">
+            <img src="d10-red-alternate.jpg" alt="Alternate Red D10 showing 0" class="dice-image">
         </div>
         <button onclick="rollDice()">Roll Dice!</button>
         <label><input type="checkbox" id="coin-flip"> Include Coin Flip ±10</label>
@@ -594,7 +603,7 @@
                     51: 'Colossians', 52: '1 Thessalonians', 53: '2 Thessalonians', 54: '1 Timothy', 55: '2 Timothy', 56: 'Titus', 57: 'Philemon', 58: 'Hebrews', 59: 'James', 60: '1 Peter',
                     61: '2 Peter', 62: '1 John', 63: '2 John', 64: '3 John', 65: 'Jude', 66: 'Revelation'
                 };
-                const book = books[roll] || 'Unknown'; 
+                const book = books[roll] || 'Unknown';
 
                 document.getElementById('result-display').innerText = `Rolled: ${roll}${adjustment} - Today's Book: ${book}`;
 
